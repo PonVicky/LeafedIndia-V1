@@ -8,6 +8,7 @@ function App() {
         <NavBar />
       </div>
       <Hero />
+      <div className="mt-44">Ombu</div>
     </div>
   );
 }
