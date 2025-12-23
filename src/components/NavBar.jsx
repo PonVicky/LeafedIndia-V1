@@ -12,7 +12,7 @@ const NavBar = () => {
       >
         <nav className="">
           <img
-            src="/public/images/logo.png"
+            src="/images/logo.png"
             alt="Leafed India Logo"
             className="w-[230px]"
           />
