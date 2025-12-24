@@ -15,7 +15,7 @@ const NavBar = () => {
             className="w-[230px]"
           />
         </nav>
-        <nav className="flex gap-10">
+        <nav className="flex gap-7">
           <button
             className="text-[14px]  md:text-[16px]  py-1 px-3 text-center
                    text-black 
