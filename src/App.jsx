@@ -3,12 +3,17 @@ import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 function App() {
   return (
-    <div>
-      <div className="sticky top-0 z-50">
+    <div className="font-sans">
+      <div className="w-full z-10 relative h-[86px] bg-[#284b63]">
+       <nav className= "w-full absolute top-12  left-1/2 -translate-x-1/2 ">
         <NavBar />
+       </nav>
       </div>
-      <Hero />
-      <div className="mt-44">Ombu</div>
+      <div className="w-full flex gap-0">
+        <Hero />
+        <nav className="h-screen w-[25%] bg-[#3c6e71]">
+        </nav>
+      </div>
     </div>
   );
 }

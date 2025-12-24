@@ -1,45 +1,116 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Hero = () => {
+  const [index, setIndex] =  useState(0);
+  const images = [
+    `/images/Grid/image2.png`,
+    `/images/Grid/image3.png`,
+    `/images/Grid/image4.png`,
+    `/images/Grid/image5.png`,
+    `/images/Grid/image6.png`,
+    `/images/Grid/image7.png`,
+    `/images/Grid/image8.png`,
+    `/images/Grid/image9.png`,
+    `/images/Grid/image10.png`,
+  ]
+  function handleLeftClick() {
+    if(index === 0) {
+      setIndex(images.length-1);
+      return;
+    }
+    setIndex(index-1)
+  }
+
+  function handleRightClick(){
+    if(index === images.length-1){
+      setIndex(0);
+      return;
+    }
+    setIndex(index+1);
+  }
   return (
     <div
-      className="relative h-screen w-full overflow-hidden
-      bg-gradient-to-br from-white via-[#f3ffdc] to-[#ecf5dc]"
+      className="relative h-screen w-full 
+      bg-[#fefbea] flex gap-0 "
     >
-      <img
-        src="/images/background.png"
-        alt="Background"
-        className="absolute inset-0 w-full  object-cover opacity-70"
-      />
+      <section className="mt-44 ml-44">
+        <p className="tracking-tighter leading-[0.95]  text-[80px] font-extrabold text-[#284B63]">Make The Best</p>
+        <p className="text-[96px] leading-[0.95] text-[#3c6e71] tracking-tighter font-extrabold mb-5">Packaging</p>
+        <p className="mb-6 text-[16px] leading-[24px] text-[#7A7A7A] md:w-[480px]">Sustainable, food-safe, biodegradable packaging solutions designed for the growing food industry.
+      </p>
+      <div>
+        <button
+            className=" group text-[14px] px-14  py-3.5  md:text-[16px]  text-center
+                   text-white font-medium 
+                  border border-transparent
+                  hover:border-[#284b63]
+                  rounded-full
+                  transition-all duration-300
+                  
+        
+                 hover:bg-[#fefbea]
+                 hover:text-[#284b63]
+                  
+                  hover:-translate-x-[4px]
+                  hover:-translate-y-[4px]
+                  
+                  hover:shadow-[4px_4px_0px_#284b63]
+                  hover: cursor-pointer
+                  bg-[#3c6e71]
+                  flex items-center 
+                  "
+          >
+            <img
+              src="/images/learnmore.png"
+              className="w-[18px] mr-2 h-auto transition-all duration-300 group-hover:invert group-hover:hue-rotate-90 group-hover:saturate-150"
+              alt="img"
+            />
+            <p>
+            Learn more
+            </p>
 
-      <div
-        className="absolute inset-0 bg-gradient-to-r
-        from-white/90 via-white/50 to-transparent"
-      />
+          </button>
+          <div className="mt-12 flex gap-0">
+              <button onClick={handleLeftClick}>
+                  <img 
+                    src="/images/previous.svg"
+                    alt="previous"
+                    className="w-[40px] hover:pr-2 ml-2 transition-all duration-300"
+                    />
+              </button>
+              <div className="w-[150px] h-[150px] overflow-hidden rounded-md">
+                  <img
+                  src={images[index]}
+                  alt="image"
+                  className="w-[200px] "
+                  />
+              </div>
+              <button onClick={handleRightClick}>
+                <img 
+                    src="/images/next.svg"
+                    alt="previous"
+                    className="w-[40px] hover:pl-2 mr-2 transition-all duration-300"
+                    />
+              </button>
+              <div className="group h-[150px] items-center transition-all duration-300 hover:cursor-pointer hover:bg-[#dbe2d4] rounded-full px-1.5 border border-[#dce0d9] flex flex-col justify-between">
+                <img src="/images/up.svg" alt="up" 
+                className="w-10 pt-2 group-hover:pt-0  transition-all duration-300 "/>
+                <img src="images/box.png" alt="box" 
+                className="w-11 pb-4"/>
+              </div>
 
-      <div className="relative z-10 px-44 pt-28 flex gap-20 items-center">
-        <div>
-          <p className="text-[30px] font-bold text-gray-800 ">
-            Choosing Eco Friendly Cup
-          </p>
-          <p className="text-[72px] text-[#95C93D] w-[394px] leading-[80px] font-bold">
-            Eco- Conscious
-          </p>
-          <p className="text-[20px] text-[#3f3f3f] mt-4">
-            {" "}
-            We're here to support you in saving the world.
-          </p>
-        </div>
-        <div className="border border-[#95c93d] rounded-2xl overflow-hidden group">
-          <img
-            src="/images/heroImage1.png"
-            alt="Hero image"
-            className="rounded-2xl transition-transform duration-300 ease-out group-hover:scale-105"
-          />
-        </div>
+          </div>
       </div>
+      </section>
+      <section className="self-end absolute right-[-190px] z-10 bottom-[-120px] ">
+        <div>
+          <img src="/images/blob.svg" alt="blob" 
+          className=""/>
+            <img src="/images/heroImage.png" alt="heroimage" className="absolute bottom-20 w-[1000px]" />
+        </div>
+      </section>
     </div>
-  );
+  )
 };
 
 export default Hero;
