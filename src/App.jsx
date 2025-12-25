@@ -9,10 +9,10 @@ function App() {
         <NavBar />
        </nav>
       </div>
-      <div className="w-full flex gap-0">
+      <div className="w-full bg-[#3c6e71] relative">
+        {/* <nav className="w-[80%]"> */}
         <Hero />
-        <nav className="h-screen w-[25%] bg-[#3c6e71]">
-        </nav>
+        {/* </nav> */}
       </div>
     </div>
   );
